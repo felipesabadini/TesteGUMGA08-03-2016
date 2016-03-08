@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body ng-controller="atividadeController as vm" ng-init="vm.loadAtividadesRecentes()">
+    {{vm.nome}}
+    <div class="container">
+      <div class="col-sm-12">
+        <div class="row">
+          <h2>Atividades recentes</h2>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="input-group">
+              <label for="nome">Seu Nome</label>
+              <input type="nome" class="form-control" ng-model="vm.atividade.nome">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="input-group">
+              <label for="atividade">Descrição da atividade praticada</label>
+              <input type="atividade" class="form-control" ng-model="vm.atividade.descricao">
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="input-group">
+              <label for="botao">&nbsp;</label>
+              <a class="btn btn-default form-control" role="button" ng-click="vm.adicionarAtividade(vm.atividade)">Adicionar Atividade</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <br>
+          <div class="col-sm-3">
+            <table class="table table-striped">
+              <tr>
+                <td>Atividade</td>
+              </tr>
+              <tr ng-repeat="ativ in vm.atividadesAtuais">
+                <td>
+                  {{ativ}}
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="input-group">
+              <label for="postar">&nbsp;</label>
+              <a class="btn btn-default form-control" role="button" ng-click="vm.postarAtividade()">Postar Atividade</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <hr>
+          <h2>Mural de atividades</h2>
+          <table class="table table-striped">
+            <tr>
+              <td>Nome</td>
+              <td>Atividades</td>
+            </tr>
+            <tr ng-repeat="ativ in vm.atividadesRecentes | orderBy: '-id'">
+              <td>
+                {{ativ.nome}}
+              </td>
+              <td>
+                {{ativ.atividades}}
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
