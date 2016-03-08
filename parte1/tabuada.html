@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
+  </head>
+  <body ng-controller="tabuadaController as vm">
+    <div class="container">
+      <div class="col-sm-12">
+          <div class="row">
+            <h2>TABUADA</h2>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="input-group">
+                <label for="numero">Digite um numero entre 1 e 10</label>
+                <input type="number" class="form-control" ng-model="vm.numero">
+                <div class="alert alert-danger" role="alert" ng-show="vm.erro">
+                  O numero digitado é invalido, so é permitido numeros entre 1 e 10 !
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3">
+              <a class="btn btn-default" role="button" ng-click="vm.listarTabuada(vm.numero)">Mostrar Tabuada</a>
+            </div>
+          </div>
+          <div class="row" ng-show="vm.mostrarTabuada">
+            <ul>
+              <li ng-repeat="n in vm.lista">
+                {{vm.tabuada}} x {{n}} = {{vm.tabuada * n}}
+              </li>
+            </ul>
+          </div>
+      </div>
+    </div>
+
+  </body>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="./tabuada.js"></script>
+</html>

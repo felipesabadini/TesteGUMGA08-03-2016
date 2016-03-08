@@ -1,0 +1,22 @@
+{
+  "name": "TesteGUMGA08-03-2016",
+  "homepage": "https://github.com/felipesabadini/TesteGUMGA08-03-2016",
+  "authors": [
+    "Felipe Sabadini Facina"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "bootstrap": "^3.3.6"
+  }
+}
